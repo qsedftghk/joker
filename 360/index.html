@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Кактус</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <style type="text/css">
+#container .threesixty {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#container .threesixty .threesixty_images {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#container .threesixty .threesixty_images img {
+  position: absolute;
+  top: 0px;  /* -24px */
+  width: 100%;
+  height: auto;
+}
+
+#container .threesixty .threesixty_images img.previous-image {
+  visibility: hidden;
+  width: 0;
+}
+#container .threesixty .threesixty_images img.current-image {
+  visibility: visible;
+  width: 100%;
+}
+#container .threesixty .spinner {
+  width: 60px;
+  display: block;
+  margin: 0 auto;
+  height: 30px;
+  background: #333;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#container .threesixty .spinner span {
+  font-family: Arial, "MS Trebuchet", sans-serif;
+  font-size: 12px;
+  font-weight: bolder;
+  color: #FFF;
+  text-align: center;
+  line-height: 30px;
+  display: block;
+}
+#container .threesixty .nav_bar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 11;
+}
+#container .threesixty .nav_bar a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  float: left;
+  background: url(/demo/img/sprites.png) no-repeat;
+  text-indent: -99999px;
+}
+#container .threesixty .nav_bar a.nav_bar_play {
+  background-position: 0 0;
+}
+#container .threesixty .nav_bar a.nav_bar_previous {
+  background-position: 0 -73px;
+}
+#container .threesixty .nav_bar a.nav_bar_stop {
+  background-position: 0 -37px;
+}
+#container .threesixty .nav_bar a.nav_bar_next {
+  background-position: 0 -104px;
+}
+/* html */
+#container:-webkit-full-screen {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  padding-top: 200px;
+}
+#container:-moz-full-screen {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  padding-top: 200px;
+}
+
+.container-fluid
+{
+ width: calc(67vh) !important; 
+ margin:70px auto 0 auto;
+}
+
+.threesixty.product1{
+    width: 100% !important; 
+    height: 90vh !important; 
+}
+
+  </style>
+  <link rel="stylesheet" href="../header.css" type="text/css" media="screen" />
+  </head>
+
+  <body>
+  <header>
+  <p>Музыкант <a href="https://www.saatchiart.com/art/Painting-The-Agaric-Flying-Dutchman/719261/2087445/view" target="_blank" class="stuts">По мотивам картины Adrian Borda</a> <a href="https://qsedftghk.github.io/joker/" class="stuts"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(посмотреть чёрно-белую картинку</a> <a href="https://qsedftghk.github.io/joker/index_color.html" class="stuts"> &nbsp;/&nbsp; цветную картинку)</a></p>
+  </header>
+<!-- по центру див и немного scale -->
+    <section class="container-fluid" id="container">
+      <div class="threesixty product1">
+        <div class="spinner">
+          <span>0%</span>
+        </div>
+        <ol class="threesixty_images"></ol>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="threesixty.js"></script>
+
+
+    <script type="text/javascript">
+    window.onload = init;
+	
+	var product;
+    function init(){
+
+      product = $('.product1').ThreeSixty({
+        totalFrames: 99,	// Общее число кадров
+        endFrame: 100,	// конечный кадр
+        currentFrame: 1,	// с какого кадра стартовать
+
+        imgList: '.threesixty_images',	// селектор изображений
+        progress: '.spinner',	// селектор элемента процесса загрузки
+        imagePath:'',	// путь к папке с изображениями imagePath:'i/'
+        filePrefix: 'a00',	// префикс файлов (если не работает страница см. этот префикс)
+        ext: '.jpg',	// формат изображения
+        width: 900,
+        height: 1200,
+        responsive: true,
+		zeroPadding: true, // разрешить начинать имя файля с нуля
+		//autoplayDirection: 1,
+		zeroBased: true // начинать имя файля с нуля
+      });
+
+ //  $('.container-fluid').bind('click', function(e) { product.play();  });
+
+
+    }
+
+
+  </script>
+
+
+  </body>
+
+</html>
