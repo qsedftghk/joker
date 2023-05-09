@@ -2,4 +2,4 @@
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://qsedftghk.github.io/joker/
 <br>
-![Preview](https://github.com/qsedftghk/joker/blob/master/joker.jpg)
+![Preview](https://github.com/qsedftghk/joker/blob/main/joker.jpg)
